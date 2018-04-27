@@ -11,7 +11,8 @@ using std::endl;
  * */
 int gcd(int a, int b)
 {
-	return 1;
+	if(b == 0) return a;
+	return gcd(b,a%b);
 }
 
 /* TODO: write the *extended* GCD algorithm, which returns gcd(a,b), but
