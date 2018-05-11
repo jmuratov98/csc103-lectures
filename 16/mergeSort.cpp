@@ -71,33 +71,18 @@ void merge(int* L, size_t nL, int* R, size_t nR, int* S)
 	while(i < nL && j < nR)
 	{
 		if(L[i] <= R[j])
-		{
-			S[k] = L[i];
-			i++;
-		}
+			S[k++] = L[i++];
 		else
-		{
-			S[k] = R[j];
-			j++;
-		}
-		k++;
+			S[k++] = R[j++];
 	}
 
 	// copies any remaining values from L
 	while(i < nL)
-	{
-		S[k] = L[i];
-		i++;
-		k++;
-	}
+		S[k++] = L[i++];
 
 	// copies any remaining values from R
 	while(j < nR)
-	{
-		S[k] = R[j];
-		j++;
-		k++;
-	}
+		S[k++] = R[j++];
 }
 
 bool search(int* A, size_t size, int x)
