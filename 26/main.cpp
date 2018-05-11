@@ -1,24 +1,27 @@
-#include "vector2.h"
+//============================================================================
+// Name        : main.cpp
+// Author      : Joseph Muratov
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Homemade Vector
+//============================================================================
+
 #include <iostream>
-using std::cout;
-using std::endl;
+#include "Vector2.h"
 
-#define such cout
-#define wow endl
-
-/* some approximation of assert: */
-// #ifndef NDEBUG
-// if (!boolean) exit(1);
-// #endif
+using namespace std;
 
 int main()
 {
 	vector2 V;
-	for (size_t i = 0; i < 10; i++) {
-		V.push_back(i*i);
+	int x;
+	while(cin >> x)
+	{
+		V.push_back(x);
 	}
-	such << V[5] << wow;
-	V[12] = 99999;
-	for (size_t i = 0; i < V.getsize(); i++)
-		printf("V[%lu] = %i\n",i,V[i]);
+
+	vector2 V2(V);
+
+	for(size_t i = 0; i < V2.size(); i++)
+		cout << V2[i] << endl;
 }
